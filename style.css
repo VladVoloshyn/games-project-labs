@@ -1,0 +1,160 @@
+
+body {
+  font-family: Arial, system-ui, sans-serif;
+  margin: 20px;
+  line-height: 1.55;
+  background-color: #f4f6ff;
+  color: #0f172a;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  text-align: center;
+  color: #0b3aa8;
+  margin: 6px 0 16px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #12306b;
+  margin: 18px 0 10px;
+}
+
+a {
+  color: #1a4fff;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:visited {
+  color: #6a2cff;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+a:active {
+  color: #ff8a00;
+}
+
+.box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #d8deee;
+}
+
+.navbar a {
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  background: #ffffff;
+  border: 1px solid #b8c3df;
+}
+
+caption {
+  padding: 10px;
+  font-weight: 800;
+  color: #1f2a44;
+}
+
+th, td {
+  border: 1px solid #b8c3df;
+  padding: 10px;
+  vertical-align: top;
+}
+
+th {
+  background: #cfd9ec;
+  text-align: center;
+}
+
+#complex th {
+  background: #bcd2ff;
+}
+
+#top {
+  scroll-margin-top: 14px;
+}
+
+.tblimg {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #d3dbef;
+}
+
+.pic {
+  width: 260px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d3dbef;
+}
+
+.leftImg {
+  float: left;
+  margin: 0 15px 10px 0;
+}
+
+.floatFrame {
+  float: left;
+  margin: 10px 0 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #d3dbef;
+}
+
+.clear {
+  clear: both;
+}
+
+ul, ol, dl {
+  margin: 10px 0 10px 26px;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: upper-roman;
+}
+
+li {
+  padding: 2px 0;
+}
+
+dl {
+  background: #ffffff;
+  border: 1px solid #d8deee;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-left: 0;
+}
+
+dt {
+  font-weight: 800;
+  color: #0b3aa8;
+  margin-top: 8px;
+}
+
+dd {
+  margin: 4px 0 8px 18px;
+  color: #24324d;
+}
+
+.pImportant {
+  color: #b40000 !important;
+  font-style: italic;
+}
