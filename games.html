@@ -4,61 +4,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="author" content="Волошин Владислав ІА-43">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ігри — добірка</title>
+
     <link rel="stylesheet" href="style.css">
-    <style>
-  a { 
-    color: #0a7a3c; 
-    text-decoration: none;
-  }
-  a:hover { 
-    text-decoration: underline; 
-  }
-</style>
 
     <style>
-        body {
-            font-family: Arial, system-ui, sans-serif;
-            margin: 20px;
-            background: #eef7f1
+        a {
+            color: #0a7a3c;
+            text-decoration: none;
         }
 
-        .box {
-            background: #fff;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px
-        }
-
-        nav {
-            margin: 10px 0
-        }
-        
-        .pic {
-            width: 260px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 10px
-        }
-
-
-        .leftImg {
-            float: left;
-            margin: 0 15px 10px 0
-        }
-
-        .clear {
-            clear: both
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
-<body link="#1a4fff" vlink="#7b2cff" alink="#ff8a00">
-
+<body class="page">
     <a id="top"></a>
-    <h1>Добірка ігор</h1>
 
-    <nav class="box">
+    <h1 id="mainTitle">Добірка ігор</h1>
+
+    <nav class="box navbar">
         <a href="index.html">Головна</a> |
         <a href="games.html">Ігри</a> |
         <a href="genres.html">Жанри</a> |
@@ -85,11 +53,11 @@
     <p><strong>CS2</strong> — командний онлайн-шутер. Тут особливо важливі <em>реакція</em>, ping і стабільний FPS.</p>
 
     <p><strong>Зменшення та збільшення в 2 рази:</strong></p>
-    <img src="img/cs2.jpg" alt="CS2 small" width="200" height="120">
-    <img src="img/cs2.jpg" alt="CS2 big" width="400" height="240">
+    <img src="img/cs2.jpg" alt="CS2 small" class="imgSmall">
+    <img src="img/cs2.jpg" alt="CS2 big" class="imgBig">
 
     <h2 id="minecraft">Minecraft</h2>
-    <p><strong>Minecraft</strong> - пісочниця, де можна будувати, виживати та грати з друзями на серверах.</p>
+    <p><strong>Minecraft</strong> — пісочниця, де можна будувати, виживати та грати з друзями на серверах.</p>
     <p>
         <a href="img/minecraft.jpg" target="_blank" rel="noopener">
             <img src="img/minecraft.jpg" alt="Minecraft" class="pic">
@@ -101,6 +69,7 @@
     <p>Повернутися: <a href="#top">на початок</a>.</p>
 
     <p class="box">Автор: Волошин Владислав ІА-43</p>
+    
 </body>
 
 </html>

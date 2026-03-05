@@ -5,8 +5,13 @@
 
     <meta charset="utf-8">
     <meta name="author" content="Волошин Владислав ІА-43">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Комп’ютерні ігри — головна</title>
+
+    <!-- 1) Зовнішні стилі -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- 2) Стилі рівня документу: перевизначення стилю для посилань -->
     <style>
         a {
             color: #0a7a3c;
@@ -18,70 +23,15 @@
         }
     </style>
 
-    <style>
-        body {
-            font-family: Arial, system-ui, sans-serif;
-            margin: 20px;
-            background: #f4f6ff
-        }
 
-        .box {
-            background: #fff;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px
-        }
-
-        nav {
-            margin: 10px 0
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 15px 0
-        }
-
-        th,
-        td {
-            border: 1px solid #999;
-            padding: 10px;
-            vertical-align: top
-        }
-
-        th {
-            background: #cfd9ec
-        }
-
-
-        .tblimg {
-            width: 220px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 10px;
-            display: block;
-            margin: 0 auto
-        }
-
-
-        .floatFrame {
-            float: left;
-            margin: 10px 0 10px 15px;
-            border-radius: 12px
-        }
-
-        .clear {
-            clear: both
-        }
-    </style>
 </head>
 
-<body>
-
+<body class="page">
     <a id="top"></a>
-    <h1>Комп’ютерні ігри</h1>
 
-    <nav class="box">
+    <h1 id="mainTitle">Комп’ютерні ігри</h1>
+
+    <nav class="box navbar">
         <a href="index.html">Головна</a> |
         <a href="games.html">Ігри</a> |
         <a href="genres.html">Жанри</a> |
@@ -92,18 +42,16 @@
     <div class="box">
         <p><strong>Комп’ютерні ігри</strong> — це поєднання розваги та навичок: реакція, увага, стратегія й творчість.
         </p>
-        <p>У проєкті використано приклади для 3 ігор: <em>GTA 6</em>, <em>CS2</em>, <em>Minecraft</em>. Також показано
-            HTML-елементи: посилання, таблиці, списки, зображення та фрейм.</p>
+
         <p>
-            Перейти: <a href="#table3x4">до таблиці 3×4</a> (ця сторінка) |
+            Перейти:
+            <a href="#complex">до таблиці 3×4</a> (ця сторінка) |
             <a href="games.html#cs2">до CS2</a> (інша сторінка) |
             <a href="genres.html#lists">до списків жанрів</a> (інша сторінка)
         </p>
     </div>
 
-
-
-    <table>
+    <table class="mainTbl">
         <caption><strong>Ігри та переходи</strong></caption>
         <thead>
             <tr>
@@ -115,8 +63,7 @@
         </thead>
 
         <tbody>
-
-            <tr style="text-align:center">
+            <tr class="tCenter">
                 <td>
                     <a href="img/gta6.jpg" target="_blank" rel="noopener">
                         <img src="img/gta6.jpg" alt="GTA 6" class="tblimg">
@@ -159,45 +106,47 @@
 
     <h2 id="complex">Складна таблиця</h2>
 
-    <table cellspacing="6" cellpadding="12">
+    <table id="complexTbl" class="mainTbl">
         <caption><strong>Налаштування для різних стилів гри</strong></caption>
 
         <colgroup>
-            <col style="width:25%">
-            <col style="width:25%">
-            <col style="width:25%">
-            <col style="width:25%">
+            <col class="col25">
+            <col class="col25">
+            <col class="col25">
+            <col class="col25">
         </colgroup>
 
-        <tr>
-            <th style="text-align:left">Профіль</th>
-            <th style="text-align:center">Роздільність</th>
-            <th style="text-align:right">FPS</th>
-            <th style="text-align:center">Порада</th>
-        </tr>
+        <thead>
+            <tr>
+                <th class="tLeft">Профіль</th>
+                <th class="tCenter">Роздільність</th>
+                <th class="tRight">FPS</th>
+                <th class="tCenter">Порада</th>
+            </tr>
+        </thead>
 
-        <tr>
-        <tr>
-            <td rowspan="2"><strong>Кіберспорт (CS2)</strong></td>
-            <td style="text-align:center">1920×1080</td>
-            <td style="text-align:right">200+</td>
-            <td rowspan="2" style="text-align:center">
-                мінімум ефектів<br>
-                <em>максимум плавності</em>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <td rowspan="2"><strong>Кіберспорт (CS2)</strong></td>
+                <td class="tCenter">1920×1080</td>
+                <td class="tRight">200+</td>
+                <td rowspan="2" class="tCenter">
+                    мінімум ефектів<br>
+                    <em>максимум плавності</em>
+                </td>
+            </tr>
 
-        <tr>
-            <td style="text-align:center">1280×960</td>
-            <td style="text-align:right">240+</td>
-        </tr>
-        </tr>
+            <tr>
+                <td class="tCenter">1280×960</td>
+                <td class="tRight">240+</td>
+            </tr>
 
-        <tr>
-            <td><strong>Відкритий світ (GTA 6)</strong></td>
-            <td colspan="2" style="text-align:center"><em>2560×1440, 60–120 FPS</em></td>
-            <td style="text-align:center">баланс графіки</td>
-        </tr>
+            <tr>
+                <td><strong>Відкритий світ (GTA 6)</strong></td>
+                <td colspan="2" class="tCenter"><em>2560×1440, 60–120 FPS</em></td>
+                <td class="tCenter">баланс графіки</td>
+            </tr>
+        </tbody>
     </table>
 
     <h2 id="frame">Плаваючий фрейм</h2>
@@ -208,10 +157,13 @@
 
     <p class="clear">Повернутися: <a href="#top">на початок</a></p>
 
-    <!-- <p style="background:#fff7cc; padding:10px; border-left:6px solid #ffb300; border-radius:10px;">
+    <!-- 3) Внутрішній стиль до абзацу (inline) -->
+    <p style="background:#fff7cc; padding:10px; border-left:6px solid #ffb300; border-radius:10px;">
         У проєкті використано приклади для 3 ігор: <em>GTA 6</em>, <em>CS2</em>, <em>Minecraft</em>.
-    </p> -->
-    <!-- <p class="pImportant">У проєкті використано приклади для 3 ігор.</p> -->
+    </p>
+
+    <!-- 4) !important -->
+    <p class="pImportant">У проєкті використано приклади для 3 ігор.</p>
 
     <p class="box">Автор: Волошин Владислав ІА-43</p>
 

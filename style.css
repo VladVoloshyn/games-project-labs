@@ -1,160 +1,227 @@
-
+/* ===== BODY (селектор тегу) ===== */
 body {
-  font-family: Arial, system-ui, sans-serif;
-  margin: 20px;
-  line-height: 1.55;
-  background-color: #f4f6ff;
-  color: #0f172a;
+    font-family: Arial, system-ui, sans-serif;
+    margin: 20px;
+    line-height: 1.55;
+    background-color: #f4f6ff;
+    color: #0f172a;
 }
 
-h1 {
-  font-size: 34px;
-  line-height: 1.2;
-  text-align: center;
-  color: #0b3aa8;
-  margin: 6px 0 16px;
+/* Додатково: клас для демонстрації селектора класу */
+.page {
+    min-width: 320px;
 }
 
+/* ===== HN (ідентифікатор) ===== */
+#mainTitle {
+    font-size: 34px;
+    line-height: 1.2;
+    text-align: center;
+    color: #0b3aa8;
+    margin: 6px 0 16px;
+}
+
+/* Інші заголовки */
 h2 {
-  font-size: 24px;
-  color: #12306b;
-  margin: 18px 0 10px;
+    font-size: 24px;
+    color: #12306b;
+    margin: 18px 0 10px;
 }
 
+/* ===== LINKS (зовнішні стилі; будуть перевизначені стилем рівня документу) ===== */
 a {
-  color: #1a4fff;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+    color: #1a4fff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
 a:visited {
-  color: #6a2cff;
+    color: #6a2cff;
 }
 
 a:hover {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 
 a:active {
-  color: #ff8a00;
+    color: #ff8a00;
 }
 
+/* Контейнери */
 .box {
-  background: #fff;
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #d8deee;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #d8deee;
 }
 
 .navbar a {
-  font-weight: 700;
+    font-weight: 700;
 }
 
+/* ===== TABLES ===== */
+.mainTbl,
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 14px 0;
-  background: #ffffff;
-  border: 1px solid #b8c3df;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    background: #ffffff;
+    border: 1px solid #b8c3df;
 }
 
 caption {
-  padding: 10px;
-  font-weight: 800;
-  color: #1f2a44;
+    padding: 10px;
+    font-weight: 800;
+    color: #1f2a44;
 }
 
-th, td {
-  border: 1px solid #b8c3df;
-  padding: 10px;
-  vertical-align: top;
+th,
+td {
+    border: 1px solid #b8c3df;
+    padding: 10px;
+    vertical-align: top;
 }
 
 th {
-  background: #cfd9ec;
-  text-align: center;
+    background: #cfd9ec;
+    text-align: center;
 }
 
-#complex th {
-  background: #bcd2ff;
+/* Виправлено: стиль саме для складної таблиці */
+#complexTbl th {
+    background: #bcd2ff;
 }
 
+/* Колонки (замість inline width) */
+.col25 {
+    width: 25%;
+}
+
+/* Вирівнювання через класи (замість style="text-align:...") */
+.tLeft {
+    text-align: left;
+}
+
+.tCenter {
+    text-align: center;
+}
+
+.tRight {
+    text-align: right;
+}
+
+/* Якір */
 #top {
-  scroll-margin-top: 14px;
+    scroll-margin-top: 14px;
 }
 
+/* Зображення */
 .tblimg {
-  width: 220px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-  border: 1px solid #d3dbef;
+    width: 220px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #d3dbef;
 }
 
 .pic {
-  width: 260px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid #d3dbef;
+    width: 260px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #d3dbef;
 }
 
 .leftImg {
-  float: left;
-  margin: 0 15px 10px 0;
+    float: left;
+    margin: 0 15px 10px 0;
+}
+
+.imgSmall {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #d3dbef;
+}
+
+.imgBig {
+    width: 400px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #d3dbef;
 }
 
 .floatFrame {
-  float: left;
-  margin: 10px 0 10px 15px;
-  border-radius: 12px;
-  border: 1px solid #d3dbef;
+    float: left;
+    margin: 10px 0 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #d3dbef;
 }
 
 .clear {
-  clear: both;
+    clear: both;
 }
 
-ul, ol, dl {
-  margin: 10px 0 10px 26px;
+/* ===== LISTS ===== */
+/* Базові списки — звичайні */
+ul,
+ol,
+dl {
+    margin: 10px 0 10px 26px;
 }
 
-ul {
-  list-style-type: square;
+/* Окремі стилі списків — через класи (демонстрація селектора класу) */
+.square-list {
+    list-style-type: square;
 }
 
-ol {
-  list-style-type: upper-roman;
+.roman-list {
+    list-style-type: upper-roman;
 }
 
 li {
-  padding: 2px 0;
+    padding: 2px 0;
 }
 
-dl {
-  background: #ffffff;
-  border: 1px solid #d8deee;
-  border-radius: 12px;
-  padding: 10px 14px;
-  margin-left: 0;
+/* Список визначень */
+.defList {
+    background: #ffffff;
+    border: 1px solid #d8deee;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-left: 0;
 }
 
 dt {
-  font-weight: 800;
-  color: #0b3aa8;
-  margin-top: 8px;
+    font-weight: 800;
+    color: #0b3aa8;
+    margin-top: 8px;
 }
 
 dd {
-  margin: 4px 0 8px 18px;
-  color: #24324d;
+    margin: 4px 0 8px 18px;
+    color: #24324d;
 }
 
+/* ===== !important (обов'язково за умовою) ===== */
 .pImportant {
-  color: #b40000 !important;
-  font-style: italic;
+    color: #b40000 !important;
+    font-style: italic;
+}
+
+/* Додатково для HN (усі заголовки) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, system-ui, sans-serif;
+    line-height: 1.2;
 }
