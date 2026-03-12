@@ -225,3 +225,64 @@ h6 {
     font-family: Arial, system-ui, sans-serif;
     line-height: 1.2;
 }
+
+/* ===== КОНТЕКСТНІ, ДОЧІРНІ ТА СУСІДНІ СЕЛЕКТОРИ ===== */
+
+/* 1. Контекстний селектор:
+   усі посилання всередині nav */
+nav a {
+    letter-spacing: 0.3px;
+}
+
+/* 2. Контекстний селектор:
+   абзаци всередині .box */
+.box p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* 3. Дочірній селектор:
+   лише прямі посилання всередині .navbar */
+.navbar > a {
+    display: inline-block;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+/* 4. Дочірній селектор:
+   лише прямі елементи списку в .square-list */
+.square-list > li {
+    color: #12306b;
+    font-weight: 600;
+}
+
+/* 5. Сусідній селектор:
+   абзац одразу після h2 */
+h2 + p {
+    background: #eef4ff;
+    padding: 8px 10px;
+    border-left: 4px solid #0b3aa8;
+    border-radius: 8px;
+}
+
+/* 6. Сусідній селектор:
+   таблиця одразу після h2 */
+h2 + table {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 7. Контекстний селектор для таблиці:
+   картинки всередині таблиці */
+.mainTbl img {
+    transition: transform 0.2s ease;
+}
+
+.mainTbl img:hover {
+    transform: scale(1.03);
+}
+
+/* 8. Дочірній селектор для box:
+   лише прямий абзац у box */
+.box > p strong {
+    color: #0b3aa8;
+}
