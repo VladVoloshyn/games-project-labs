@@ -1,4 +1,4 @@
-/* ===== BODY (селектор тегу) ===== */
+
 body {
     font-family: Arial, system-ui, sans-serif;
     margin: 20px;
@@ -7,12 +7,12 @@ body {
     color: #0f172a;
 }
 
-/* Додатково: клас для демонстрації селектора класу */
+
 .page {
     min-width: 320px;
 }
 
-/* ===== HN (ідентифікатор) ===== */
+/* ідентифікатор */
 #mainTitle {
     font-size: 34px;
     line-height: 1.2;
@@ -21,14 +21,14 @@ body {
     margin: 6px 0 16px;
 }
 
-/* Інші заголовки */
+
 h2 {
     font-size: 24px;
     color: #12306b;
     margin: 18px 0 10px;
 }
 
-/* ===== LINKS (зовнішні стилі; будуть перевизначені стилем рівня документу) ===== */
+/* зовнішні стилі */
 a {
     color: #1a4fff;
     text-decoration: underline;
@@ -48,7 +48,7 @@ a:active {
     color: #ff8a00;
 }
 
-/* Контейнери */
+
 .box {
     background: #fff;
     padding: 15px;
@@ -61,7 +61,7 @@ a:active {
     font-weight: 700;
 }
 
-/* ===== TABLES ===== */
+
 .mainTbl,
 table {
     width: 100%;
@@ -89,17 +89,17 @@ th {
     text-align: center;
 }
 
-/* Виправлено: стиль саме для складної таблиці */
+
 #complexTbl th {
     background: #bcd2ff;
 }
 
-/* Колонки (замість inline width) */
+
 .col25 {
     width: 25%;
 }
 
-/* Вирівнювання через класи (замість style="text-align:...") */
+
 .tLeft {
     text-align: left;
 }
@@ -112,12 +112,12 @@ th {
     text-align: right;
 }
 
-/* Якір */
+
 #top {
     scroll-margin-top: 14px;
 }
 
-/* Зображення */
+
 .tblimg {
     width: 220px;
     height: 140px;
@@ -168,15 +168,12 @@ th {
     clear: both;
 }
 
-/* ===== LISTS ===== */
-/* Базові списки — звичайні */
-ul,
-ol,
-dl {
+
+ul,ol,dl {
     margin: 10px 0 10px 26px;
 }
 
-/* Окремі стилі списків — через класи (демонстрація селектора класу) */
+
 .square-list {
     list-style-type: square;
 }
@@ -189,7 +186,7 @@ li {
     padding: 2px 0;
 }
 
-/* Список визначень */
+
 .defList {
     background: #ffffff;
     border: 1px solid #d8deee;
@@ -209,55 +206,45 @@ dd {
     color: #24324d;
 }
 
-/* ===== !important (обов'язково за умовою) ===== */
+/* !important */
 .pImportant {
     color: #b40000 !important;
     font-style: italic;
 }
 
-/* Додатково для HN (усі заголовки) */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* заголовки */
+h1,h2,h3,h4,h5,h6 {
     font-family: Arial, system-ui, sans-serif;
     line-height: 1.2;
 }
 
-/* ===== КОНТЕКСТНІ, ДОЧІРНІ ТА СУСІДНІ СЕЛЕКТОРИ ===== */
+/* КОНТЕКСТНІ, ДОЧІРНІ ТА СУСІДНІ СЕЛЕКТОРИ */
 
-/* 1. Контекстний селектор:
-   усі посилання всередині nav */
+/* КС */
 nav a {
     letter-spacing: 0.3px;
 }
 
-/* 2. Контекстний селектор:
-   абзаци всередині .box */
+/* КС */
 .box p {
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
-/* 3. Дочірній селектор:
-   лише прямі посилання всередині .navbar */
+/* ДС */
 .navbar > a {
     display: inline-block;
     padding: 4px 6px;
     border-radius: 6px;
 }
 
-/* 4. Дочірній селектор:
-   лише прямі елементи списку в .square-list */
+/* ДС */
 .square-list > li {
     color: #12306b;
     font-weight: 600;
 }
 
-/* 5. Сусідній селектор:
-   абзац одразу після h2 */
+/* СС */
 h2 + p {
     background: #eef4ff;
     padding: 8px 10px;
@@ -265,14 +252,12 @@ h2 + p {
     border-radius: 8px;
 }
 
-/* 6. Сусідній селектор:
-   таблиця одразу після h2 */
+/* СС */
 h2 + table {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-/* 7. Контекстний селектор для таблиці:
-   картинки всередині таблиці */
+/* КС */
 .mainTbl img {
     transition: transform 0.2s ease;
 }
@@ -281,8 +266,8 @@ h2 + table {
     transform: scale(1.03);
 }
 
-/* 8. Дочірній селектор для box:
-   лише прямий абзац у box */
+/* ДС */
 .box > p strong {
     color: #0b3aa8;
 }
+
