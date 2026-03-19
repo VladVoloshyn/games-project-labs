@@ -12,7 +12,7 @@ body {
     min-width: 320px;
 }
 
-/* ідентифікатор */
+
 #mainTitle {
     font-size: 34px;
     line-height: 1.2;
@@ -28,7 +28,7 @@ h2 {
     margin: 18px 0 10px;
 }
 
-/* зовнішні стилі */
+
 a {
     color: #1a4fff;
     text-decoration: underline;
@@ -206,19 +206,19 @@ dd {
     color: #24324d;
 }
 
-/* !important */
+
 .pImportant {
     color: #b40000 !important;
     font-style: italic;
 }
 
-/* заголовки */
+
 h1,h2,h3,h4,h5,h6 {
     font-family: Arial, system-ui, sans-serif;
     line-height: 1.2;
 }
 
-/* КОНТЕКСТНІ, ДОЧІРНІ ТА СУСІДНІ СЕЛЕКТОРИ */
+/* */
 
 /* КС */
 nav a {
@@ -269,5 +269,41 @@ h2 + table {
 /* ДС */
 .box > p strong {
     color: #0b3aa8;
+}
+
+.highlight {
+    background: #f2ffe0;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.toTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0ce3e3;
+    color: rgb(9, 5, 5);
+    padding: 10px 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:link {
+    color: #1a4fff;
+}
+
+.box p:first-child {
+    font-weight: bold;
+    color: #0b3aa8;
+}
+
+h2::before {
+    content: "🎮 ";
+}
+
+h2::after {
+    content: " ✔";
+    color: green;
 }
 
