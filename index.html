@@ -2,158 +2,266 @@
 <html lang="uk">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="author" content="Волошин Владислав ІА-43">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Комп’ютерні ігри — головна</title>
-
+    <title>GameSpace — сайт для геймерів</title>
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        a {
+            color: #0a7a3c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #edf4ff, #f8fbff);
+            border: 1px solid #d8deee;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            margin-top: 0;
+        }
+
+        .hero p {
+            margin: 8px 0;
+        }
+
+        .actionRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .actionRow button {
+            padding: 10px 14px;
+            border: 1px solid #b8c3df;
+            border-radius: 8px;
+            background: #eef4ff;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .actionRow button:hover {
+            background: #dce8ff;
+        }
+
+        .tipsGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .tipsCard {
+            background: #fff;
+            border: 1px solid #d8deee;
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .tipsCard h3 {
+            margin-top: 0;
+            color: #12306b;
+        }
+    </style>
 </head>
 
 <body class="page">
     <a id="top"></a>
 
-    <h1 id="mainTitle">Комп’ютерні ігри</h1>
+    <h1 id="mainTitle">GameSpace — простір для тих, хто любить ігри</h1>
 
     <nav class="box navbar">
         <a href="index.html">Головна</a> |
         <a href="games.html">Ігри</a> |
         <a href="genres.html">Жанри</a> |
         <a href="hardware.html">Залізо</a> |
-        <a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam (інтернет)</a>
+        <a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a>
     </nav>
 
-    <div class="box">
+    <section class="hero">
+        <h2>Що є на сайті</h2>
+        <p id="welcomeBox">
+            Тут зібрані короткі поради для гравців: що обрати, у що зіграти, який жанр вам підійде
+            та на які характеристики комп’ютера варто звернути увагу.
+        </p>
         <p>
-            <strong>Комп’ютерні ігри</strong> — це
-            <span class="highlight">поєднання розваги та навичок</span>: реакція, увага, стратегія й творчість.
-        </p> <!---->
+            Якщо ви любите сюжетні пригоди, змагальні шутери або творчі пісочниці, тут можна швидко
+            знайти потрібний розділ і перейти далі.
+        </p>
 
+        <div class="actionRow">
+            <button onclick="userDialog()">Підібрати формат гри</button>
+            <button onclick="showDeveloperInfo('Волошин', 'Владислав')">Про розробника</button>
+            <button onclick="compareStrings('Counter-Strike 2', 'Minecraft')">Порівняти назви ігор</button>
+            <button onclick="changeBackgroundFor30Seconds()">Увімкнути режим фокусу</button>
+            <button onclick="goToGamesPage()">Перейти до добірки ігор</button>
+        </div>
+    </section>
+
+    <div class="box">
+        <p><strong>Швидкі переходи:</strong></p>
         <p>
-            Перейти:
-            <a href="#complexTbl">до таблиці</a> |
-            <a href="games.html#cs2">до CS2</a> (інша сторінка) |
-            <a href="genres.html#lists">до списків жанрів</a> (інша сторінка)
+            <a href="#popular">Популярне зараз</a> |
+            <a href="#tips">Корисні поради</a> |
+            <a href="#frame">Зовнішній ресурс</a> |
+            <a href="#dynamic">Оновлення сторінки</a>
         </p>
     </div>
 
+    <h2 id="popular">Популярні ігри, з яких варто почати</h2>
+
     <table class="mainTbl">
-        <caption><strong>ПОПУЛЯРНІ ІГРИ</strong></caption>
-        <thead>
-            <tr>
-                <th>GTA 6</th>
-                <th>CS2</th>
-                <th>Minecraft</th>
-                <th>Games (загальне)</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr class="tCenter">
-                <td>
-                    <a href="img/gta6.jpg" target="_blank" rel="noopener">
-                        <img src="img/gta6.jpg" alt="GTA 6" class="tblimg">
-                    </a>
-                </td>
-                <td>
-                    <a href="img/cs2.jpg" target="_blank" rel="noopener">
-                        <img src="img/cs2.jpg" alt="CS2" class="tblimg">
-                    </a>
-                </td>
-                <td>
-                    <a href="img/minecraft.jpg" target="_blank" rel="noopener">
-                        <img src="img/minecraft.jpg" alt="Minecraft" class="tblimg">
-                    </a>
-                </td>
-                <td>
-                    <a href="img/games.jpg" target="_blank" rel="noopener">
-                        <img src="img/games.jpg" alt="Games" class="tblimg">
-                    </a>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td><a href="games.html#gta6">Перейти до GTA 6</a></td>
-                <td><a href="games.html#cs2">Перейти до CS2</a></td>
-                <td><a href="games.html#minecraft">Перейти до Minecraft</a></td>
-                <td><a href="genres.html#lists">Перейти до списків жанрів</a></td>
-            </tr>
-
-
-            <tr>
-                <td>Екшен з відкритим світом та місіями.</td>
-                <td>Командний онлайн-шутер, важливі FPS і ping.</td>
-                <td>Пісочниця: будівництво, виживання, сервери.</td>
-                <td>Сторінка про жанри та терміни (FPS, ping).</td>
-            </tr>
-        </tbody>
+        <caption>Коротка добірка</caption>
+        <tr>
+            <th>Гра</th>
+            <th>Зображення</th>
+            <th>Для кого підійде</th>
+            <th>Перехід</th>
+        </tr>
+        <tr>
+            <td class="tCenter"><strong>GTA 6</strong></td>
+            <td class="tCenter">
+                <img src="img/gta6.jpg" alt="GTA 6" class="tblimg">
+            </td>
+            <td>
+                Для тих, хто любить відкритий світ, сюжет, атмосферу великого міста й свободу дій.
+            </td>
+            <td class="tCenter">
+                <a href="games.html#gta6">Детальніше</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="tCenter"><strong>CS2</strong></td>
+            <td class="tCenter">
+                <img src="img/cs2.jpg" alt="CS2" class="tblimg">
+            </td>
+            <td>
+                Для тих, кому важливі реакція, командна гра, точність і стабільний високий FPS.
+            </td>
+            <td class="tCenter">
+                <a href="games.html#cs2">Детальніше</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="tCenter"><strong>Minecraft</strong></td>
+            <td class="tCenter">
+                <img src="img/minecraft.jpg" alt="Minecraft" class="tblimg">
+            </td>
+            <td>
+                Для тих, хто хоче будувати, досліджувати світ, експериментувати та грати з друзями.
+            </td>
+            <td class="tCenter">
+                <a href="games.html#minecraft">Детальніше</a>
+            </td>
+        </tr>
     </table>
 
-    <table id="complexTbl" class="mainTbl">
-        <caption><strong>НАЛАШТУВАННЯ ДЛЯ РІЗНИХ СТИЛІВ ГРИ</strong></caption>
+    <h2 id="tips">Що допоможе грати комфортніше</h2>
 
-        <colgroup>
-            <col class="col25">
-            <col class="col25">
-            <col class="col25">
-            <col class="col25">
-        </colgroup>
+    <div class="tipsGrid">
+        <div class="tipsCard">
+            <h3>Для шутерів</h3>
+            <p>Слідкуйте за стабільним FPS, частотою оновлення монітора та якістю інтернет-з’єднання.</p>
+        </div>
 
-        <thead>
-            <tr>
-                <th class="tLeft">Профіль</th>
-                <th class="tCenter">Роздільність</th>
-                <th class="tRight">FPS</th>
-                <th class="tCenter">Порада</th>
-            </tr>
-        </thead>
+        <div class="tipsCard">
+            <h3>Для сюжетних ігор</h3>
+            <p>Краще обирати вищу якість графіки, якщо комп’ютер дозволяє грати без різких просідань.</p>
+        </div>
 
-        <tbody>
-            <tr>
-                <td rowspan="2"><strong>Кіберспорт (CS2)</strong></td>
-                <td class="tCenter">1920×1080</td>
-                <td class="tRight">200+</td>
-                <td class="tCenter">мінімум ефектів</td>
-            </tr>
+        <div class="tipsCard">
+            <h3>Для довгих сесій</h3>
+            <p>Налаштуйте зручність: яскравість, звук, крісло, відстань до монітора й короткі перерви.</p>
+        </div>
+    </div>
 
-            <tr>
-                <td class="tCenter">1280×960</td>
-                <td class="tRight">240+</td>
-                <td class="tCenter"><em>максимум плавності</em></td>
-            </tr>
+    <h2 id="frame">Додатковий ресурс для геймерів</h2>
 
-            <tr>
-                <td><strong>Відкритий світ (GTA 6)</strong></td>
-                <td colspan="2" class="tCenter"><em>2560×1440, 60–120 FPS</em></td>
-                <td class="tCenter">баланс графіки</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="box" id="htmlExample">
+        <p id="commentText">Тут можна переглянути зовнішній ресурс прямо на сторінці без окремого переходу.</p>
 
-    <h2 id="frame">Плаваючий фрейм</h2>
+        <iframe src="https://uk.wikipedia.org/wiki/Відеогра" width="500" height="300" class="floatFrame"
+            title="Відеоігри"></iframe>
 
-    <iframe class="floatFrame" src="https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%B4%D0%B5%D0%BE%D0%B3%D1%80%D0%B0"
-        width="360" height="220" title="Відеогра">
-    </iframe>
+        <p>
+            Ми додали цей блок, щоб ви могли переглянути корисну інформацію про відеоігри прямо на сторінці.
+            Це допоможе швидше зорієнтуватися у темі без зайвих переходів між сайтами.
+        </p>
+        <p>
+            У скриптах також використано роботу з DOM-властивостями:
+            <strong>innerHTML</strong>, <strong>outerHTML</strong>, <strong>nodeValue</strong>,
+            <strong>data</strong> і <strong>textContent</strong>.
+        </p>
 
-    <p class="clear">Повернутися: <a href="#top">на початок</a></p>
+        <p class="clear"></p>
+    </div>
 
+    <h2 id="dynamic">Оновлення сторінки через JavaScript</h2>
 
-    <p style="background:#fff7cc; padding:10px; border-left:6px solid #ffb300; border-radius:10px;">
-        Вище було згадано такі ігри:
-    </p>
+    <div class="box">
+        <script>
+            document.write("<p><strong>Новина дня:</strong> ми оновили сайт і додали більше підказок, щоб вам було простіше обрати гру за настроєм, жанром і стилем проходження.</p>");
+        </script>
+    </div>
 
+    <div class="box" id="dynamicBlock">
+        <p>У цьому розділі з’являтимуться оновлення та корисні рекомендації для відвідувачів сайту.</p>
+    </div>
 
-    <p class="pImportant"><em>GTA 6</em>, <em>CS2</em>, <em>Minecraft</em>.</p>
+    <p class="box" id="replaceMe">Ми постійно доповнюємо сайт, щоб зробити вибір ігор зручнішим і цікавішим.</p>
 
-    <p class="box">Автор: Волошин Владислав ІА-43</p>
+    <p class="box" id="removeMe">Тут може відображатися тимчасова інформація, яка зникає після оновлення сторінки.</p>
+
+    <div class="box" id="authorBox">
+        Тут ви можете знайти коротку інформацію про автора та мету цього сайту.
+    </div>
+
+    <p class="box">Автор сайту: Волошин Владислав ІА-43</p>
 
     <a href="#top" class="toTop">↑</a>
 
+    <!-- Внутрішній скрипт: alert, prompt, confirm -->
+    <script src="script.js"></script>
+
+    <script>
+        alert("Вітаємо на GameSpace!");
+
+        const visitorName = prompt("Як до вас звертатися?", "Гість");
+        const wantsFocusMode = confirm("Увімкнути спокійний фон сторінки на 30 секунд?");
+
+        window.addEventListener("load", function () {
+            const welcomeBox = document.getElementById("welcomeBox");
+
+            if (welcomeBox) {
+                if (visitorName !== null && visitorName.trim() !== "") {
+                    welcomeBox.innerHTML =
+                        "<strong>Раді вас бачити, " + visitorName + "!</strong> На сайті ви можете знайти ігри за настроєм, жанром і стилем проходження.";
+                } else {
+                    welcomeBox.innerHTML =
+                        "<strong>Раді вас бачити!</strong> На сайті ви можете знайти ігри за настроєм, жанром і стилем проходження.";
+                }
+            }
+
+            if (wantsFocusMode) {
+                const oldBackground = document.body.style.backgroundColor;
+                document.body.style.backgroundColor = "#eefbe7";
+
+                setTimeout(function () {
+                    document.body.style.backgroundColor = oldBackground;
+                }, 30000);
+            }
+        });
+    </script>
 </body>
 
 </html>

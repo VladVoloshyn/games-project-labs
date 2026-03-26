@@ -302,7 +302,8 @@ h2+table {
 
 .box p:first-child {
     font-weight: bold;
-    color: #0b3aa8;
+    color: #44b9c9;
+
 }
 
 h2::before {
