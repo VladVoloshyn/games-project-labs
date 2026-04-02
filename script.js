@@ -23,7 +23,7 @@ function userDialog() {
 
     let freeHours;
     while (true) {
-        let inputValue = prompt(
+        const inputValue = prompt(
             "Скільки годин ви готові приділити грі сьогодні? Введіть число від 1 до 12.",
             "2"
         );
@@ -92,10 +92,16 @@ function goToGamesPage() {
     location.href = "games.html";
 }
 
+/* 1. Подія миші через атрибут */
+function cardClickFromAttribute(event) {
+    event.currentTarget.classList.toggle("activeCard");
+    alert("Подія через атрибут onclick спрацювала на картці.");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const mainTitle = document.getElementById("mainTitle");
     if (mainTitle) {
-        mainTitle.innerHTML = "🎮 " + mainTitle.innerHTML;
+        mainTitle.innerHTML = "🎮 " + mainTitle.textContent;
     }
 
     const navLinks = document.querySelectorAll("nav a");
@@ -106,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const authorBox = document.getElementById("authorBox");
     if (authorBox) {
         authorBox.textContent =
-            "Сайт створив Волошин Владислав. Тут зібрано короткі поради, добірки ігор і корисна інформація для гравців.";
+            "Сайт створив Волошин Владислав. Тут зібрано короткі поради, добірки ігор і корисну інформацію для гравців.";
     }
 
     const textNodeExample = document.getElementById("commentText");
@@ -161,4 +167,143 @@ document.addEventListener("DOMContentLoaded", function () {
             removeElement.remove();
         }
     }
+
+    /* 1. Подія через властивість */
+    const propertyCard = document.getElementById("propertyCard");
+    if (propertyCard) {
+        propertyCard.onclick = function (event) {
+            event.currentTarget.classList.toggle("activeCard");
+            alert("Подія через властивість onclick спрацювала на картці.");
+        };
+    }
+
+    /* 1. addEventListener: одна подія — різні обробники */
+    const multiHandlerCard = document.getElementById("multiHandlerCard");
+
+    function firstMultiHandler(event) {
+        event.currentTarget.classList.toggle("activeCard");
+    }
+
+    function secondMultiHandler() {
+        console.log("Другий обробник теж спрацював.");
+    }
+
+    if (multiHandlerCard) {
+        multiHandlerCard.addEventListener("click", firstMultiHandler);
+        multiHandlerCard.addEventListener("click", secondMultiHandler);
+    }
+
+    /* 1. Об’єкт як обробник + handleEvent + event.currentTarget */
+    const objectHandlerCard = document.getElementById("objectHandlerCard");
+    const removeObjectHandlerBtn = document.getElementById("removeObjectHandlerBtn");
+    const objectHandlerText = document.getElementById("objectHandlerText");
+
+    const cardObjectHandler = {
+        handleEvent(event) {
+            const currentElement = event.currentTarget;
+
+            currentElement.classList.toggle("activeCard");
+
+            if (objectHandlerText) {
+                objectHandlerText.innerHTML =
+                    "Обробник спрацював на елементі: <strong>" +
+                    currentElement.id +
+                    "</strong>";
+            }
+
+            console.log("event.currentTarget:", currentElement);
+        }
+    };
+
+    if (objectHandlerCard) {
+        objectHandlerCard.addEventListener("click", cardObjectHandler);
+    }
+
+    if (removeObjectHandlerBtn && objectHandlerCard) {
+        removeObjectHandlerBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
+            objectHandlerCard.removeEventListener("click", cardObjectHandler);
+
+            if (objectHandlerText) {
+                objectHandlerText.innerHTML =
+                    "Об’єкт-обробник видалено через <strong>removeEventListener</strong>.";
+            }
+
+            alert("Об’єкт-обробник для цієї картки видалено.");
+        });
+    }
+
+    /* 2. Делегування подій для списку */
+    const genreList = document.getElementById("genreList");
+    if (genreList) {
+        genreList.onclick = function (event) {
+            if (event.target.tagName !== "LI") {
+                return;
+            }
+
+            const items = genreList.querySelectorAll("li");
+            items.forEach(function (item) {
+                item.classList.remove("selectedGenre");
+            });
+
+            event.target.classList.add("selectedGenre");
+        };
+    }
+
+    /* 2. Меню з data-action */
+    const actionMenu = document.getElementById("actionMenu");
+
+    const menuActions = {
+        openGames() {
+            location.href = "games.html";
+        },
+        openGenres() {
+            location.href = "genres.html";
+        },
+        openHardware() {
+            location.href = "hardware.html";
+        },
+        showAdvice() {
+            alert("Порада: для комфортної гри звертайте увагу не лише на жанр, а й на вимоги до ПК.");
+        }
+    };
+
+    if (actionMenu) {
+        actionMenu.addEventListener("click", function (event) {
+            const action = event.target.dataset.action;
+
+            if (!action || !menuActions[action]) {
+                return;
+            }
+
+            menuActions[action]();
+        });
+    }
+
+    /* 2. Поведінка через data-behavior */
+    document.addEventListener("click", function (event) {
+        const behavior = event.target.dataset.behavior;
+
+        if (!behavior) {
+            return;
+        }
+
+        if (behavior === "scrollTop") {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+        if (behavior === "toggleHighlight") {
+            const tipsBlock = document.getElementById("tips");
+            if (tipsBlock) {
+                tipsBlock.classList.toggle("tipsAccent");
+            }
+        }
+
+        if (behavior === "showMessage") {
+            alert("Ми постійно оновлюємо сайт, щоб допомогти відвідувачам швидше знаходити цікаві ігри.");
+        }
+    });
 });

@@ -22,37 +22,50 @@
         .hero {
             background: linear-gradient(135deg, #edf4ff, #f8fbff);
             border: 1px solid #d8deee;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 18px;
+            border-radius: 18px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 24px rgba(20, 41, 86, 0.06);
         }
 
         .hero h2 {
             margin-top: 0;
+            margin-bottom: 14px;
         }
 
         .hero p {
-            margin: 8px 0;
+            margin: 10px 0;
+        }
+
+        .welcomeText {
+            background: #eef4ff;
+            border-left: 4px solid #2857c5;
+            border-radius: 12px;
+            padding: 14px 16px;
         }
 
         .actionRow {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 14px;
+            gap: 12px;
+            margin-top: 18px;
         }
 
         .actionRow button {
-            padding: 10px 14px;
+            padding: 11px 16px;
             border: 1px solid #b8c3df;
-            border-radius: 8px;
+            border-radius: 10px;
             background: #eef4ff;
             cursor: pointer;
             font-weight: 700;
+            color: #183a7a;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .actionRow button:hover {
             background: #dce8ff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(25, 58, 122, 0.08);
         }
 
         .tipsGrid {
@@ -64,13 +77,139 @@
         .tipsCard {
             background: #fff;
             border: 1px solid #d8deee;
-            border-radius: 12px;
-            padding: 14px;
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: 0 6px 18px rgba(20, 41, 86, 0.05);
         }
 
         .tipsCard h3 {
             margin-top: 0;
+            margin-bottom: 8px;
             color: #12306b;
+        }
+
+        .sectionCard {
+            background: #fff;
+            border: 1px solid #d8deee;
+            border-radius: 18px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 10px 24px rgba(20, 41, 86, 0.05);
+        }
+
+        .sectionLead {
+            background: #eef4ff;
+            border-left: 4px solid #2857c5;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-top: 12px;
+            margin-bottom: 18px;
+        }
+
+        .interactiveGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .demoCard {
+            background: linear-gradient(135deg, #ffffff, #f8fbff);
+            border: 1px solid #d8deee;
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 6px 18px rgba(20, 41, 86, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+            cursor: pointer;
+            min-height: 220px;
+        }
+
+        .demoCard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(20, 41, 86, 0.09);
+            border-color: #a9bce8;
+        }
+
+        .demoCard.activeCard {
+            background: #eef8ff;
+            border-color: #5b8def;
+        }
+
+        .demoCard h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #14284f;
+            font-size: 18px;
+        }
+
+        .demoCard p {
+            margin: 0;
+            color: #25324d;
+        }
+
+        .genreList {
+            list-style: none;
+            margin: 14px 0 0;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .genreList li {
+            background: #f8fbff;
+            border: 1px solid #d8deee;
+            border-radius: 12px;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            font-weight: 600;
+        }
+
+        .genreList li:hover {
+            background: #edf4ff;
+            transform: translateX(4px);
+        }
+
+        .genreList li.selectedGenre {
+            background: #dff4df;
+            border-color: #65a865;
+            font-weight: 700;
+        }
+
+        .menuRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .siteBtn {
+            padding: 11px 16px;
+            border: 1px solid #b8c3df;
+            border-radius: 10px;
+            background: #eef4ff;
+            color: #12306b;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .siteBtn:hover {
+            background: #dce8ff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(25, 58, 122, 0.08);
+        }
+
+        .tipsAccent {
+            outline: 2px solid #83b6ff;
+            outline-offset: 4px;
+            border-radius: 12px;
+        }
+
+        .smallNote {
+            font-size: 14px;
+            color: #5c6985;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -89,22 +228,122 @@
     </nav>
 
     <section class="hero">
-        <h2>Що є на сайті</h2>
-        <p id="welcomeBox">
-            Тут зібрані короткі поради для гравців: що обрати, у що зіграти, який жанр вам підійде
-            та на які характеристики комп’ютера варто звернути увагу.
+        <h2>Ваш швидкий старт у світі ігор</h2>
+
+        <p id="welcomeBox" class="welcomeText">
+            Тут ви можете швидко знайти ігри за настроєм, жанром і стилем проходження.
         </p>
+
         <p>
-            Якщо ви любите сюжетні пригоди, змагальні шутери або творчі пісочниці, тут можна швидко
-            знайти потрібний розділ і перейти далі.
+            Ми зібрали на одному сайті короткі поради, добірки популярних ігор, пояснення щодо жанрів
+            та базові рекомендації для комфортної гри на ПК.
+        </p>
+
+        <p>
+            Якщо ви любите сюжетні пригоди, змагальні шутери або творчі пісочниці,
+            тут легко обрати напрям і перейти до потрібного розділу.
         </p>
 
         <div class="actionRow">
             <button onclick="userDialog()">Підібрати формат гри</button>
-            <button onclick="showDeveloperInfo('Волошин', 'Владислав')">Про розробника</button>
+            <button onclick="showDeveloperInfo('Волошин', 'Владислав')">Про автора сайту</button>
             <button onclick="compareStrings('Counter-Strike 2', 'Minecraft')">Порівняти назви ігор</button>
             <button onclick="changeBackgroundFor30Seconds()">Увімкнути режим фокусу</button>
             <button onclick="goToGamesPage()">Перейти до добірки ігор</button>
+        </div>
+    </section>
+
+    <section class="sectionCard">
+        <h2>Корисні можливості для відвідувача</h2>
+
+        <p class="sectionLead">
+            На цій сторінці ви можете взаємодіяти з окремими блоками, швидко переходити між розділами
+            та налаштовувати перегляд так, як вам зручно.
+        </p>
+
+        <div class="interactiveGrid">
+            <div class="demoCard" id="mouseCard" onclick="cardClickFromAttribute(event)">
+                <h3>Швидкий вибір</h3>
+                <p>
+                    Натисніть на цей блок, якщо хочете протестувати інтерактивні елементи сайту
+                    та подивитися, як сторінка реагує на дії користувача.
+                </p>
+            </div>
+
+            <div class="demoCard" id="propertyCard">
+                <h3>Зручна взаємодія</h3>
+                <p>
+                    Цей розділ показує, як сайт може змінюватися після натискання,
+                    допомагаючи зробити навігацію більш живою та зрозумілою.
+                </p>
+            </div>
+
+            <div class="demoCard" id="multiHandlerCard">
+                <h3>Розумні реакції сайту</h3>
+                <p>
+                    Деякі елементи сторінки можуть виконувати кілька дій одночасно:
+                    змінювати вигляд, підказувати користувачу та оновлювати інформацію.
+                </p>
+            </div>
+
+            <div class="demoCard" id="objectHandlerCard">
+                <h3>Керування інтерактивністю</h3>
+                <p id="objectHandlerText">
+                    Ви можете перевірити, як працює інтерактивний блок, а також за потреби
+                    вимкнути його дію окремою кнопкою нижче.
+                </p>
+                <div style="margin-top: 16px;">
+                    <button class="siteBtn" id="removeObjectHandlerBtn" type="button">Вимкнути інтерактивність цього блоку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sectionCard">
+        <h2>Популярні жанри для швидкого вибору</h2>
+
+        <p class="sectionLead">
+            Оберіть напрям, який вам ближчий, і виділіть його одним натисканням.
+            Це зручно, якщо ви ще не визначилися, з чого саме хочете почати.
+        </p>
+
+        <ul id="genreList" class="genreList">
+            <li>Сюжетні пригоди</li>
+            <li>Онлайн-шутери</li>
+            <li>Пісочниці</li>
+            <li>Стратегії</li>
+            <li>Гоночні ігри</li>
+        </ul>
+    </section>
+
+    <section class="sectionCard">
+        <h2>Швидкі дії на сайті</h2>
+
+        <p class="sectionLead">
+            Скористайтеся кнопками нижче, щоб одразу перейти до потрібного розділу
+            або отримати коротку корисну пораду.
+        </p>
+
+        <div id="actionMenu" class="menuRow">
+            <button class="siteBtn" type="button" data-action="openGames">Переглянути добірку ігор</button>
+            <button class="siteBtn" type="button" data-action="openGenres">Перейти до жанрів</button>
+            <button class="siteBtn" type="button" data-action="openHardware">Переглянути поради щодо ПК</button>
+            <button class="siteBtn" type="button" data-action="showAdvice">Отримати коротку пораду</button>
+        </div>
+    </section>
+
+    <section class="sectionCard">
+        <h2>Додаткові зручності для перегляду</h2>
+
+        <p class="sectionLead">
+            У цьому блоці зібрані прості дії, які допомагають зробити перегляд сторінки
+            більш комфортним і наочним.
+        </p>
+
+        <div id="behaviorPanel" class="menuRow">
+            <button class="siteBtn" type="button" data-behavior="scrollTop">Повернутися на початок</button>
+            <button class="siteBtn" type="button" data-behavior="toggleHighlight">Виділити корисні поради</button>
+            <button class="siteBtn" type="button" data-behavior="showMessage">Показати повідомлення</button>
         </div>
     </section>
 
@@ -188,19 +427,17 @@
     <h2 id="frame">Додатковий ресурс для геймерів</h2>
 
     <div class="box" id="htmlExample">
-        <p id="commentText">Тут можна переглянути зовнішній ресурс прямо на сторінці без окремого переходу.</p>
+        <p id="commentText">Тут можна переглянути корисний зовнішній матеріал прямо на сторінці без окремого переходу.</p>
 
         <iframe src="https://uk.wikipedia.org/wiki/Відеогра" width="500" height="300" class="floatFrame"
             title="Відеоігри"></iframe>
 
         <p>
-            Ми додали цей блок, щоб ви могли переглянути корисну інформацію про відеоігри прямо на сторінці.
-            Це допоможе швидше зорієнтуватися у темі без зайвих переходів між сайтами.
+            Ми додали цей блок, щоб відвідувач міг швидко ознайомитися із загальною інформацією
+            про відеоігри, не залишаючи сайт.
         </p>
         <p>
-            У скриптах також використано роботу з DOM-властивостями:
-            <strong>innerHTML</strong>, <strong>outerHTML</strong>, <strong>nodeValue</strong>,
-            <strong>data</strong> і <strong>textContent</strong>.
+            Це зручно для тих, хто хоче не лише переглянути добірки, а й краще розібратися в самій темі.
         </p>
 
         <p class="clear"></p>
@@ -230,7 +467,7 @@
 
     <a href="#top" class="toTop">↑</a>
 
-    <!-- Внутрішній скрипт: alert, prompt, confirm -->
+    
     <script src="script.js"></script>
 
     <script>

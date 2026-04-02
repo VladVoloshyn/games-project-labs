@@ -314,3 +314,91 @@ h2::after {
     content: " ✔";
     color: green;
 }
+.interactiveSection {
+    margin-top: 18px;
+}
+
+.interactiveGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.demoCard {
+    background: linear-gradient(135deg, #ffffff, #f5f8ff);
+    border: 1px solid #d8deee;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.demoCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: #a9bce8;
+}
+
+.demoCard.activeCard {
+    background: #eef8ff;
+    border-color: #5b8def;
+}
+
+.genreList {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.genreList li {
+    background: #f8fbff;
+    border: 1px solid #d8deee;
+    border-radius: 10px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.genreList li:hover {
+    background: #edf4ff;
+    transform: translateX(4px);
+}
+
+.genreList li.selectedGenre {
+    background: #dff4df;
+    border-color: #65a865;
+    font-weight: 700;
+}
+
+.menuRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.siteBtn {
+    padding: 10px 16px;
+    border: 1px solid #b8c3df;
+    border-radius: 10px;
+    background: #eef4ff;
+    color: #12306b;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.siteBtn:hover {
+    background: #dce8ff;
+    transform: translateY(-1px);
+}
+
+.tipsAccent {
+    outline: 2px solid #83b6ff;
+    outline-offset: 4px;
+    border-radius: 12px;
+}
