@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (behavior === "toggleHighlight") {
             const tipsBlock = document.getElementById("tips");
-            if (tipsBlock) {
+            if (tipsBlock) {Í
                 tipsBlock.classList.toggle("tipsAccent");
             }
         }
@@ -306,4 +306,120 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Ми постійно оновлюємо сайт, щоб допомогти відвідувачам швидше знаходити цікаві ігри.");
         }
     });
+
+
+        /* 3. mouseover, mouseout, event.target, event.relatedTarget */
+    const mouseEventArea = document.getElementById("mouseEventArea");
+    const mouseEventInfo = document.getElementById("mouseEventInfo");
+
+    if (mouseEventArea && mouseEventInfo) {
+        mouseEventArea.addEventListener("mouseover", function (event) {
+            const target = event.target.closest(".hoverItem");
+
+            if (!target || !mouseEventArea.contains(target)) {
+                return;
+            }
+
+            target.classList.add("hovered");
+
+            const fromElement = event.relatedTarget
+                ? event.relatedTarget.closest(".hoverItem")
+                : null;
+
+            mouseEventInfo.innerHTML =
+                "Курсор увійшов в елемент: <strong>" +
+                target.textContent +
+                "</strong>" +
+                (fromElement
+                    ? ". Попередній елемент: <strong>" + fromElement.textContent + "</strong>."
+                    : ". Попередній елемент: поза блоком.");
+        });
+
+        mouseEventArea.addEventListener("mouseout", function (event) {
+            const target = event.target.closest(".hoverItem");
+
+            if (!target || !mouseEventArea.contains(target)) {
+                return;
+            }
+
+            target.classList.remove("hovered");
+
+            const toElement = event.relatedTarget
+                ? event.relatedTarget.closest(".hoverItem")
+                : null;
+
+            mouseEventInfo.innerHTML =
+                "Курсор вийшов з елемента: <strong>" +
+                target.textContent +
+                "</strong>" +
+                (toElement
+                    ? ". Наступний елемент: <strong>" + toElement.textContent + "</strong>."
+                    : ". Курсор вийшов за межі блоку.");
+        });
+    }
+
+    /* 4. Перетягування елемента: mousedown, mousemove, mouseup */
+    const dragZone = document.getElementById("dragZone");
+    const dragItem = document.getElementById("dragItem");
+
+    if (dragZone && dragItem) {
+        let isDragging = false;
+        let shiftX = 0;
+        let shiftY = 0;
+
+        dragItem.addEventListener("mousedown", function (event) {
+            isDragging = true;
+            dragItem.classList.add("dragging");
+
+            const itemRect = dragItem.getBoundingClientRect();
+
+            shiftX = event.clientX - itemRect.left;
+            shiftY = event.clientY - itemRect.top;
+
+            event.preventDefault();
+        });
+
+        document.addEventListener("mousemove", function (event) {
+            if (!isDragging) {
+                return;
+            }
+
+            const zoneRect = dragZone.getBoundingClientRect();
+
+            let newLeft = event.clientX - zoneRect.left - shiftX;
+            let newTop = event.clientY - zoneRect.top - shiftY;
+
+            const maxLeft = dragZone.clientWidth - dragItem.offsetWidth;
+            const maxTop = dragZone.clientHeight - dragItem.offsetHeight;
+
+            if (newLeft < 0) {
+                newLeft = 0;
+            }
+            if (newTop < 0) {
+                newTop = 0;
+            }
+            if (newLeft > maxLeft) {
+                newLeft = maxLeft;
+            }
+            if (newTop > maxTop) {
+                newTop = maxTop;
+            }
+
+            dragItem.style.left = newLeft + "px";
+            dragItem.style.top = newTop + "px";
+        });
+
+        document.addEventListener("mouseup", function () {
+            if (!isDragging) {
+                return;
+            }
+
+            isDragging = false;
+            dragItem.classList.remove("dragging");
+        });
+
+        dragItem.addEventListener("dragstart", function (event) {
+            event.preventDefault();
+        });
+    }
 });

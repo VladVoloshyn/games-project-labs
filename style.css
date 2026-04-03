@@ -402,3 +402,65 @@ h2::after {
     outline-offset: 4px;
     border-radius: 12px;
 }
+
+
+
+
+/* */
+.mouseEventArea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.hoverItem {
+    min-width: 140px;
+    padding: 16px 18px;
+    background: #f8fbff;
+    border: 1px solid #d8deee;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    color: #12306b;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hoverItem.hovered {
+    background: #dff4ff;
+    border-color: #5b8def;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(20, 41, 86, 0.08);
+}
+
+.dragZone {
+    position: relative;
+    margin-top: 18px;
+    height: 260px;
+    border: 2px dashed #b8c3df;
+    border-radius: 16px;
+    background: #f8fbff;
+    overflow: hidden;
+}
+
+.dragItem {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 170px;
+    padding: 16px;
+    background: #eef4ff;
+    border: 1px solid #5b8def;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 700;
+    color: #12306b;
+    cursor: grab;
+    user-select: none;
+    box-shadow: 0 6px 14px rgba(20, 41, 86, 0.08);
+}
+
+.dragItem.dragging {
+    cursor: grabbing;
+    opacity: 0.9;
+}
